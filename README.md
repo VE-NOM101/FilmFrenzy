@@ -1,4 +1,4 @@
-#########################FilmFrenzy#############################
+######################FilmFrenzy#######################
 ----------------------------------------------------------------
 Welcome to the Film Review System!
 This project allows users to explore and engage with movie reviews provided by critics.
