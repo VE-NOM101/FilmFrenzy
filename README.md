@@ -50,8 +50,13 @@ Note: The specific command to run the program may vary depending on your operati
 Project Description:
 --------------------
 Project name: FilmFrenzy
+
 Project submitted by: Choyan Mitra Barua Bijoy
+
 Roll : 2007101
+
 Section: B
+
 Year: 2nd
+
 Term: 1st
