@@ -1,12 +1,10 @@
-###############################FilmFrenzy##################################
---------------------------
+#########################FilmFrenzy#############################
+----------------------------------------------------------------
 Welcome to the Film Review System!
 This project allows users to explore and engage with movie reviews provided by critics.
 Please follow the instructions below to make the most of this program.
 
-Project Descriptio
-
-Instructions
+Instructions:
 -------------
 @ Login: To access the program, you must first log in using your existing account or
 create a new account if you don't have one yet.
@@ -34,7 +32,7 @@ You can remove your User ID or Critic ID by accessing the account settings and f
 @ A comment must be in one line; multiple lines are not allowed.
 
 
-##To run the Film Review System, follow these steps:
+To run the Film Review System, follow these steps:
 ----------------------------------------------------------------------------------------------
 1.Open a command prompt or PowerShell.
 
@@ -48,3 +46,12 @@ run the program using one of the following commands:
 For PowerShell:-> .\filmfrenzy
 For command prompt:-> filmfrenzy
 Note: The specific command to run the program may vary depending on your operating system and setup.
+
+Project Description:
+--------------------
+Project name: FilmFrenzy
+Project submitted by: Choyan Mitra Barua Bijoy
+Roll : 2007101
+Section: B
+Year: 2nd
+Term: 1st
