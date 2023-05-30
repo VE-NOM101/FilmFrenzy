@@ -60,7 +60,8 @@ jump:
         {
             goto jump;
         }
-        else{
+        else
+        {
             fusers.close();
             return 0;
         }
@@ -85,7 +86,7 @@ bool LoginSys::user_sign_in(void)
     char userid[25], userpw[36];
 
 outerjump:
-    fusers.open("user_data.dat", ios::in|ios::binary);
+    fusers.open("user_data.dat", ios::in | ios::binary);
     bool flag = 0;
     fusers.seekg(0, ios::beg);
     cout << "Enter username:\n";
@@ -110,7 +111,7 @@ outerjump:
         {
             cout << "Signed-In successfully\n";
             fusers.close();
-            strcpy(curr_user,userid);
+            strcpy(curr_user, userid);
             return 1;
         }
         else
@@ -173,7 +174,8 @@ jump:
         {
             goto jump;
         }
-        else{
+        else
+        {
             fcritics.close();
             return 0;
         }
@@ -198,7 +200,7 @@ bool LoginSys::critic_sign_in(void)
     char criticid[25], criticpw[36];
 
 outerjump:
-    fcritics.open("critic_data.dat", ios::in|ios::binary);
+    fcritics.open("critic_data.dat", ios::in | ios::binary);
     bool flag = 0;
     fcritics.seekg(0, ios::beg);
     cout << "Enter Critic's id:\n";
@@ -223,7 +225,7 @@ outerjump:
         {
             cout << "Signed-In successfully\n";
             fcritics.close();
-            strcpy(curr_critic,criticid);
+            strcpy(curr_critic, criticid);
             return 1;
         }
         else
@@ -257,11 +259,12 @@ outerjump:
     }
 }
 
-bool LoginSys :: delete_user(void){
+bool LoginSys ::delete_user(void)
+{
     user temp;
     fusers.open("user_data.dat", ios::in | ios::binary);
-    char userid[25],userpw[36];
-    int count=0;
+    char userid[25], userpw[36];
+    int count = 0;
     cout << "Enter the username:\n";
     cin >> userid;
     bool flag = 0;
@@ -277,37 +280,48 @@ bool LoginSys :: delete_user(void){
         }
     }
     if (flag)
-    {   
-        fusers.open("user_data.dat",ios::in|ios::out|ios::binary);
-        jump:
-        cout<<"Enter the password:\n";
-        cin>>userpw;
-        if(!strcmp(userpw,temp.getPw())){
+    {
+        fusers.open("user_data.dat", ios::in | ios::out | ios::binary);
+    jump:
+        cout << "Enter the password:\n";
+        cin >> userpw;
+        if (!strcmp(userpw, temp.getPw()))
+        {
             position -= 61;
             fusers.seekp(position, ios::beg);
             char zero[5] = "000";
             temp.setValue(zero, zero);
             fusers.write((char *)&temp, sizeof(temp));
             fusers.close();
-            cout<<"User account is deleted successfully\n";
+            cout << "User account is deleted successfully\n";
             return 1;
-        }else{
-            cout<<"Wrong password\n";
-            if(count==3){fusers.close(); return 0;}
-            else goto jump;
         }
-    }else{
-        cout<<"No username is matched!\n";
+        else
+        {
+            cout << "Wrong password\n";
+            if (count == 3)
+            {
+                fusers.close();
+                return 0;
+            }
+            else
+                goto jump;
+        }
+    }
+    else
+    {
+        cout << "No username is matched!\n";
         fusers.close();
         return 0;
     }
 }
 
-bool LoginSys :: delete_critic(void){
+bool LoginSys ::delete_critic(void)
+{
     user temp;
     fcritics.open("critic_data.dat", ios::in | ios::binary);
-    char criticid[25],criticpw[36];
-    int count=0;
+    char criticid[25], criticpw[36];
+    int count = 0;
     cout << "Enter the Critic's id:\n";
     cin >> criticid;
     bool flag = 0;
@@ -323,27 +337,37 @@ bool LoginSys :: delete_critic(void){
         }
     }
     if (flag)
-    {   
-        fcritics.open("critic_data.dat",ios::in|ios::out|ios::binary);
-        jump:
-        cout<<"Enter the password:\n";
-        cin>>criticpw;
-        if(!strcmp(criticpw,temp.getPw())){
+    {
+        fcritics.open("critic_data.dat", ios::in | ios::out | ios::binary);
+    jump:
+        cout << "Enter the password:\n";
+        cin >> criticpw;
+        if (!strcmp(criticpw, temp.getPw()))
+        {
             position -= 61;
             fcritics.seekp(position, ios::beg);
             char zero[5] = "000";
             temp.setValue(zero, zero);
             fcritics.write((char *)&temp, sizeof(temp));
             fcritics.close();
-            cout<<"Critic account is deleted successfully\n";
+            cout << "Critic account is deleted successfully\n";
             return 1;
-        }else{
-            cout<<"Wrong password\n";
-            if(count==3){fcritics.close(); return 0;}
-            else goto jump;
         }
-    }else{
-        cout<<"No Critic's id is matched!\n";
+        else
+        {
+            cout << "Wrong password\n";
+            if (count == 3)
+            {
+                fcritics.close();
+                return 0;
+            }
+            else
+                goto jump;
+        }
+    }
+    else
+    {
+        cout << "No Critic's id is matched!\n";
         fcritics.close();
         return 0;
     }
