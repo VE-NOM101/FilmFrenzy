@@ -56,4 +56,14 @@ class user_review:public review{
 };
 
 void operator+(critic_review&, user_review&);
+
+template<typename T>
+void add_watchlist(T& obj);
+template<typename T>
+void view_watchlist(T& obj);
+
+void watchlist(review& obj);
+
+void top_movies(void);
+
 #endif

@@ -29,8 +29,34 @@ Spaces may cause login errors, so ensure that you enter the information correctl
 @ Deletion of IDs: Both users and critics have the option to delete their accounts if desired.
 You can remove your User ID or Critic ID by accessing the account settings and following the provided instructions.
 
-@ A comment must be in one line; multiple lines are not allowed.
+@ Comment: A comment must be in one line; multiple lines are not allowed.
 
+
+Facilites:
+------------
+1) User registration and login: Users can create an account and log in to the system.
+
+2) Write review: Logged-in users can write reviews for movies they have watched.
+
+3) Edit review: Users can edit their previously submitted reviews.
+
+4) Delete review: Users can delete their own reviews if needed.
+
+5) View review: Users can view their own reviews as well as reviews written by others.
+
+6) Comment on reviews: Users can leave comments on reviews to engage in discussions.
+
+7) Add movies to watchlist: Users can add movies they want to watch to their personal watchlist.
+
+8) Read reviews: Users can read reviews written by others to get recommendations or insights about movies.
+
+9)Top movie list: The system provides a list of top-rated movies based on user ratings or IMDb ratings.
+
+10)Search movies: Users can search for movies by title.
+
+11) User roles: Admins can have additional privileges such as managing user accounts and movie listings.
+
+and many more....
 
 ##To run the Film Review System, follow these steps:
 ----------------------------------------------------------------------------------------------

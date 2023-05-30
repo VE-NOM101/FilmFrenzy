@@ -22,6 +22,7 @@ void critic_review :: search(void){
     cout<<"#Press e to edit a review.\n";
     cout<<"#Press d to delete a review.\n";
     cout<<"#Press v to view a review.\n";
+    cout<<"#Press a to add movie in watchlist & view the watchlist.\n";
     cout<<"#Press o to exit.\n";
     char ch;
     cin>>ch;
@@ -31,6 +32,7 @@ void critic_review :: search(void){
         case 'e': critic_review :: edit_review(); break;
         case 'd': critic_review :: delete_review(); break;
         case 'v': critic_review :: view(); break;
+        case 'a': watchlist(*this); break;
         case 'o': return;
         default: cout<<"Can't understand\n";
     }
@@ -268,4 +270,102 @@ void operator+(critic_review&obj1, user_review&obj2){
     }
     file.close();
     return;
+}
+
+
+//update 2
+
+
+template<typename T>
+
+void add_watchlist(T& obj){
+
+    fstream file;
+    char name[25];
+    char wlist[50];
+    if(typeid(obj)==typeid(user_review)) strcpy(name,obj.login.curr_user);
+    else if(typeid(obj)==typeid(critic_review)) strcpy(name,obj.login.curr_critic);
+    strcpy(wlist,name);
+    strcat(wlist,"_wlist.txt");
+    file.open(wlist,ios:: app);
+    if(file.is_open()){
+        cout<<"Enter the movie name, that you want to add in watchlist:\n";
+        char movie[50];
+        cin>>movie;
+        file<<movie<<endl;
+        cout<<"Movie added successfully in the list <"<<name<<">\n";
+        cout<<endl;
+        file.close();
+        return;
+    }else{
+        file.close();
+        return;
+    }
+}
+
+template<typename T>
+void view_watchlist(T& obj){
+    fstream file;
+    char name[25];
+    char wlist[50];
+    if(typeid(obj)==typeid(user_review)) strcpy(name,obj.login.curr_user);
+    else if(typeid(obj)==typeid(critic_review)) strcpy(name,obj.login.curr_critic);
+    strcpy(wlist,name);
+    strcat(wlist,"_wlist.txt");
+    file.open(wlist,ios:: in);
+    if(file.is_open()){
+        char line [100];
+        int count =1;
+        cout<<"Watchlist of <"<<name<<">\n";
+        cout<<"..................................................\n";
+        while(1){
+            if(file.eof()) break;
+            file.getline(line,100);
+            cout<<count<<") "<<line<<endl;
+            count++;
+        }
+        file.close();
+        return;
+    }else{
+        cout<<"No watchlist has been found.\n";
+        file.close();
+        return;
+    }
+}
+
+void watchlist(review& obj){
+    jump:
+    cout<<"\nPress, 1 to add movie in watchlist.\n";
+    cout<<"Press, 2 to view movie watchlist.\n";
+    cout<<"Press, any other key to exit.\n";
+    int p;
+    cin>>p;
+    if(p==1){
+        add_watchlist(obj);
+        goto jump;
+    }else if(p==2){
+        view_watchlist(obj);
+        goto jump;
+    }else{
+        return;
+    }
+}
+
+void top_movies(void){
+    fstream file;
+    file.open("top_movies.txt",ios::in);
+    if(file.is_open()){
+        char line[100];
+        int count=1;
+        while(1){
+            if(file.eof()) break;
+            file.getline(line,100);
+            cout<<count<<") "<<line<<endl;
+            count++;
+        }
+        file.close();
+    }else{
+        cout<<"top_movies.txt file doesn't exist\n";
+        file.close();
+    }
 }
