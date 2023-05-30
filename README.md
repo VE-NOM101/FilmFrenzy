@@ -50,9 +50,9 @@ Facilites:
 
 8) Read reviews: Users can read reviews written by others to get recommendations or insights about movies.
 
-9)Top movie list: The system provides a list of top-rated movies based on user ratings or IMDb ratings.
+9) Top movie list: The system provides a list of top-rated movies based on user ratings or IMDb ratings.
 
-10)Search movies: Users can search for movies by title.
+10) Search movies: Users can search for movies by title.
 
 11) User roles: Admins can have additional privileges such as managing user accounts and movie listings.
 
