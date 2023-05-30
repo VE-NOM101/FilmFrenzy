@@ -31,6 +31,48 @@ You can remove your User ID or Critic ID by accessing the account settings and f
 
 @ A comment must be in one line; multiple lines are not allowed.
 
+Facilites:
+------------
+
+1) User registration and login: Users can create an account and log in to the system.
+
+2) Write review: Logged-in users can write reviews for movies they have watched.
+
+3) Edit review: Users can edit their previously submitted reviews.
+
+4) Delete review: Users can delete their own reviews if needed.
+
+5) View review: Users can view their own reviews as well as reviews written by others.
+
+6) Comment on reviews: Users can leave comments on reviews to engage in discussions.
+
+7) Add movies to watchlist: Users can add movies they want to watch to their personal watchlist.
+
+8) Read reviews: Users can read reviews written by others to get recommendations or insights about movies.
+
+9)Top movie list: The system provides a list of top-rated movies based on user ratings or IMDb ratings.
+
+10)Search movies: Users can search for movies by title.
+
+11) User roles: Admins can have additional privileges such as managing user accounts and movie listings.
+
+and many more...
+
+List of used C++ & OOP concept:
+1. Inheritance
+2. Polymorphism
+3. Encapsulation
+4. Data abstraction and Data hiding
+5. Friend Funtion
+6. File I/O
+7. Operator Overloading
+8. Function Overloading
+9. RTTI
+10. Makefile
+11. Template
+12. STL
+13. Type Conversion and Typeid
+and many more...
 
 To run the Film Review System, follow these steps:
 ----------------------------------------------------------------------------------------------
